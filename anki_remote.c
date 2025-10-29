@@ -216,7 +216,7 @@ static void anki_remote_scene_menu_draw_callback(Canvas* canvas, void* context) 
     AnkiRemoteApp* app = context;
     canvas_clear(canvas);
     canvas_set_font(canvas, FontPrimary);
-    canvas_draw_str(canvas, 2, 12, "Custom BLE Remote");
+    canvas_draw_str(canvas, 2, 12, "Custom BLEB Remote");
     canvas_set_font(canvas, FontSecondary);
     for(uint8_t i = 0; i < MENU_OPTIONS_COUNT; ++i) {
         if(i == app->menu_state.selected_item) {
@@ -1043,6 +1043,7 @@ static void anki_remote_set_scene(AnkiRemoteApp* app, AppScene new_scene) {
         */
 
         app->ble_hid_profile = bt_profile_start(app->bt, ble_profile_hid, NULL);
+        // # TODO alter this ^^^^^ somehow to change what the flipper advertises itself as
         furi_check(app->ble_hid_profile);
         furi_hal_bt_start_advertising();
     } else if(new_scene == SceneSettingsMenu) {
