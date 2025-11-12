@@ -13,10 +13,10 @@
 #include <extra_profiles/hid_profile.h>
 
 // Image assets
-#include "anki_remote_icons.h"
+#include "kobo_remote_icons.h"
 
 // Defines
-#define TAG "AnkiRemoteApp"
+#define TAG "KoboRemoteApp"
 #define KEYMAP_PATH APP_DATA_PATH("keymaps.dat")
 #define NUM_FLIPPER_BUTTONS 6
 #define MENU_OPTIONS_COUNT 2
@@ -1110,7 +1110,7 @@ static void anki_remote_app_free(AnkiRemoteApp* app) {
 // - - - Final Section: Main Entry Point - - -
 
 
-int32_t anki_remote_app(void* p) {
+int32_t kobo_remote_app(void* p) {
     UNUSED(p);
     AnkiRemoteApp* app = anki_remote_app_alloc();
     AnkiRemoteEvent event;
